@@ -1,18 +1,47 @@
 package com.airplane.management_system.model;
 
-import com.airplane.management_system.enums.Cities;
 import jakarta.persistence.*;
 
-@Entity
+import java.sql.Date;
+
 public class Ticket {
 
-    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long ticketID;
-    @Column(name = "departure_location")
-    private Cities from;
-    @Column(name = "arrival_location")
-    private Cities to;
     private Double ticketPrice;
+    private Date flightDate;
+    private Flight flight;
 
+    public Long getTicketID() {
+        return ticketID;
+    }
+
+    public void setTicketID(Long ticketID) {
+        this.ticketID = ticketID;
+    }
+
+    public Double getTicketPrice() {
+        return ticketPrice;
+    }
+
+    public void setTicketPrice(Double ticketPrice) {
+        this.ticketPrice = ticketPrice;
+    }
+
+    public Date getFlightDate() {
+        return flightDate;
+    }
+
+    public void setFlightDate(Date flightDate) {
+        this.flightDate = flightDate;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
 
 }
