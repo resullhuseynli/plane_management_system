@@ -1,21 +1,27 @@
 package com.airplane.management_system.model;
 
-import com.airplane.management_system.enums.Cities;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Plane {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long planeID;
-
-    @Column(name = "departure_location")
-    private Cities from;
-
-    @Column(name = "arrival_location")
-    private Cities to;
-
+    private String planeID;
     private Integer planeCapacity;
 
+    public Plane() {};
+
+    public String getPlaneID() {
+        return planeID;
+    }
+
+    public Integer getPlaneCapacity() {
+        return planeCapacity;
+    }
+
+    public Plane(String planeID, Integer planeCapacity) {
+        this.planeID = planeID;
+        this.planeCapacity = planeCapacity;
+    }
 }
